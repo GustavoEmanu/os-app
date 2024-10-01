@@ -69,22 +69,6 @@
             font-size: 20px;
             color: #0275d8;
         }
-        .hidden-section {
-            display: none;
-        }
-        /* Alinhamento dos checkboxes */
-        .checkbox-group {
-            display: grid;
-            grid-template-columns: repeat(2, auto);
-            gap: 10px;
-        }
-        .form-check {
-            display: flex;
-            align-items: center;
-        }
-        .form-check-label {
-            margin-left: 5px;
-        }
     </style>
 </head>
 <body>
@@ -144,52 +128,38 @@
 
                     <h5 class="text-center">Diagnóstico Final</h5>
 
-                    <div class="checkbox-group">
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="finalizado">
-                            <label class="form-check-label" for="finalizado">Finalizado</label>
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="finalizado">
+                        <label class="form-check-label" for="finalizado">
+                            Finalizado
+                        </label>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="valorGasto">Valor Gasto</label>
+                            <input type="text" class="form-control" id="valorGasto" placeholder="Valor Gasto">
                         </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="naoTemConserto">
-                            <label class="form-check-label" for="naoTemConserto">Não tem conserto</label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="clienteAceitou">
-                            <label class="form-check-label" for="clienteAceitou">Cliente Aceitou</label>
-                        </div>
-                        <div class="form-check mb-3">
-                            <input class="form-check-input" type="checkbox" id="clienteRecusou">
-                            <label class="form-check-label" for="clienteRecusou">Cliente Recusou</label>
+                        <div class="col">
+                            <label for="maoDeObra">Mão de Obra</label>
+                            <input type="text" class="form-control" id="maoDeObra" placeholder="Mão de Obra">
                         </div>
                     </div>
 
-                    <div id="formularioAdicional">
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="valorGasto">Valor Gasto</label>
-                                <input type="text" class="form-control" id="valorGasto" placeholder="Valor Gasto">
-                            </div>
-                            <div class="col">
-                                <label for="maoDeObra">Mão de Obra</label>
-                                <input type="text" class="form-control" id="maoDeObra" placeholder="Mão de Obra">
-                            </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="pecasTrocadas">Peça(s) Trocada(s)</label>
+                            <input type="text" class="form-control" id="pecasTrocadas" placeholder="Peças Trocadas">
                         </div>
+                        <div class="col">
+                            <label for="problemasSolucionados">Problema(s) solucionado(s)</label>
+                            <input type="text" class="form-control" id="problemasSolucionados" placeholder="Problemas Solucionados">
+                        </div>
+                    </div>
 
-                        <div class="row mb-3">
-                            <div class="col">
-                                <label for="pecasTrocadas">Peça(s) Trocada(s)</label>
-                                <input type="text" class="form-control" id="pecasTrocadas" placeholder="Peças Trocadas">
-                            </div>
-                            <div class="col">
-                                <label for="problemasSolucionados">Problema(s) solucionado(s)</label>
-                                <input type="text" class="form-control" id="problemasSolucionados" placeholder="Problemas Solucionados">
-                            </div>
-                        </div>
-
-                        <div class="form-group mb-3">
-                            <label for="nomeTecnico">Nome do Técnicasasao</label>
-                            <input type="text" class="form-control" id="nomeTecnico" placeholder="Nome do Técnico">
-                        </div>
+                    <div class="form-group mb-3">
+                        <label for="nomeTecnico">Nome do Técnico</label>
+                        <input type="text" class="form-control" id="nomeTecnico" placeholder="Nome do Técnico">
                     </div>
 
                     <div class="text-center">
@@ -201,11 +171,5 @@
     </div>
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
-    <script>
-        document.getElementById('clienteRecusou').addEventListener('change', function () {
-            var formularioAdicional = document.getElementById('formularioAdicional');
-            formularioAdicional.style.display = this.checked ? 'none' : 'block';
-        });
-    </script>
 </body>
 </html>
